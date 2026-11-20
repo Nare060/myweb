@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="application-page">
+<body class="application-page residence-application-page">
   <header class="site-header site-header--solid">
     <a class="brand" href="index.html">
       <img src="Logo/ChatGPT%20Image%20Nov%2015,%202026,%2007_08_58%20PM.png" alt="">
@@ -19,11 +19,26 @@
 
   <main class="application-main">
     <div class="application-intro">
-      <a class="back-link" href="index.html">← Back to home</a>
-      <p class="eyebrow eyebrow--green">Residence application</p>
-      <h1>Apply for residence</h1>
-      <p>Your profile details will be included in an email draft for the Kwena Student Heights team.</p>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
+      <p class="eyebrow eyebrow--green">Kwena Student Heights</p>
+      <h1>Residence application</h1>
+      <p>Review your profile and prepare an email to the residence team. You’ll review and send the email yourself.</p>
     </div>
+
+    <ol class="application-progress" aria-label="Application progress">
+      <li class="application-progress-step application-progress-step--complete">
+        <span class="application-progress-number">1</span>
+        <span class="application-progress-label">Profile</span>
+      </li>
+      <li class="application-progress-step application-progress-step--current" aria-current="step">
+        <span class="application-progress-number">2</span>
+        <span class="application-progress-label">Review</span>
+      </li>
+      <li class="application-progress-step">
+        <span class="application-progress-number">3</span>
+        <span class="application-progress-label">Send</span>
+      </li>
+    </ol>
 
     <p class="application-card" id="application-state" role="status" aria-live="polite">Checking your profile… If this message remains, check Firebase setup and reload.</p>
     <div class="application-card" id="application-gate" hidden>

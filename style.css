@@ -817,6 +817,274 @@ a {
   text-decoration: underline;
 }
 
+.residence-application-page {
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(213, 237, 219, 0.72), transparent 34rem),
+    #f7f9f7;
+}
+
+.residence-application-page .site-header--solid {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(220, 229, 222, 0.8);
+}
+
+.residence-application-page .header-link {
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: var(--green-dark);
+  background: #e8f3eb;
+}
+
+.residence-application-page .header-link:hover {
+  text-decoration: none;
+  background: #dceee1;
+}
+
+.residence-application-page .application-main {
+  width: min(820px, calc(100% - 48px));
+  flex: 1;
+  margin: 0 auto;
+  padding: clamp(36px, 7vh, 64px) 0 72px;
+}
+
+.residence-application-page .application-intro {
+  width: auto;
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.residence-application-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.residence-application-page .back-link span {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--green-dark);
+  background: #fff;
+  transition: transform 160ms ease;
+}
+
+.residence-application-page .back-link:hover span {
+  transform: translateX(-3px);
+}
+
+.residence-application-page .application-intro .eyebrow {
+  margin-bottom: 12px;
+}
+
+.residence-application-page .application-intro h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 50px);
+  letter-spacing: -0.05em;
+  line-height: 1.12;
+}
+
+.residence-application-page .application-intro > p:not(.eyebrow) {
+  max-width: 640px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.application-progress {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto 18px;
+  padding: 18px 22px;
+  border: 1px solid rgba(220, 229, 222, 0.9);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(24, 55, 34, 0.06);
+  list-style: none;
+}
+
+.application-progress-step {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 9px;
+}
+
+.application-progress-step:not(:last-child)::after {
+  height: 1px;
+  flex: 1;
+  margin: 0 14px;
+  background: #e2e9e3;
+  content: "";
+}
+
+.application-progress-number {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #dfe7e0;
+  border-radius: 50%;
+  color: #78857b;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.application-progress-step--complete .application-progress-number {
+  color: var(--green-dark);
+  background: #eaf4ec;
+  border-color: #d5e7d9;
+}
+
+.application-progress-step--current .application-progress-number {
+  border-color: var(--green);
+  color: #fff;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(24, 122, 59, 0.12);
+}
+
+.application-progress-label {
+  color: #778279;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.application-progress-step--complete .application-progress-label,
+.application-progress-step--current .application-progress-label {
+  color: var(--ink);
+}
+
+.residence-application-page .application-card {
+  width: 100%;
+  margin: 0;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid rgba(220, 229, 222, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 22px 60px rgba(24, 55, 34, 0.08);
+}
+
+.residence-application-page #application-gate h2,
+.residence-application-page .form-section h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.residence-application-page #application-gate > p:not(.form-note) {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.residence-application-page #application-gate .form-note {
+  margin-top: 18px;
+}
+
+.residence-application-page #application-gate .form-note a {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.residence-application-page .form-section h2 {
+  margin-bottom: 20px;
+}
+
+.residence-application-page .profile-summary {
+  grid-template-columns: minmax(110px, 0.65fr) minmax(0, 1.35fr);
+  gap: 0 16px;
+}
+
+.residence-application-page .profile-summary dt,
+.residence-application-page .profile-summary dd {
+  padding: 11px 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+.residence-application-page .profile-summary dt {
+  font-size: 12px;
+}
+
+.residence-application-page .profile-summary dd {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.residence-application-page .consent {
+  margin: 24px 0 18px;
+  padding: 16px;
+  border: 1px solid #e8eee9;
+  border-radius: 12px;
+  background: #f7faf7;
+  font-size: 12px;
+}
+
+.residence-application-page #application-form > .button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 10px;
+}
+
+.residence-application-page .form-note,
+.residence-application-page .form-status {
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .residence-application-page .application-main {
+    width: calc(100% - 32px);
+    padding: 28px 0 48px;
+  }
+
+  .residence-application-page .back-link {
+    margin-bottom: 24px;
+  }
+
+  .application-progress {
+    padding: 14px 12px;
+  }
+
+  .application-progress-step {
+    gap: 6px;
+  }
+
+  .application-progress-step:not(:last-child)::after {
+    margin: 0 7px;
+  }
+
+  .application-progress-number {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .application-progress-label {
+    font-size: 11px;
+  }
+
+  .residence-application-page .application-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .residence-application-page .profile-summary {
+    grid-template-columns: minmax(94px, 0.6fr) minmax(0, 1.4fr);
+    gap: 0 10px;
+  }
+}
+
 @media (max-width: 700px) {
   .account-grid {
     grid-template-columns: 1fr;
