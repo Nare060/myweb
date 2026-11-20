@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /profiles/{userId} {
+      allow get: if request.auth != null && request.auth.uid == userId;
+      allow list, update, delete: if false;
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.keys().hasAll([
+          'uid', 'fullName', 'email', 'phone', 'studentNumber',
+          'university', 'studyYear', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'uid', 'fullName', 'email', 'phone', 'studentNumber',
+          'university', 'studyYear', 'createdAt'
+        ])
+        && request.resource.data.uid == userId
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.fullName is string
+        && request.resource.data.fullName.size() > 0
+        && request.resource.data.fullName.size() <= 120
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() > 0
+        && request.resource.data.phone.size() <= 32
+        && request.resource.data.studentNumber is string
+        && request.resource.data.studentNumber.size() > 0
+        && request.resource.data.studentNumber.size() <= 64
+        && request.resource.data.university in [
+          'Vaal University of Technology',
+          'North-West University'
+        ]
+        && request.resource.data.studyYear in [
+          '1st year', '2nd year', '3rd year', '4th year', 'Postgraduate', 'Other'
+        ]
+        && request.resource.data.createdAt == request.time;
+    }
+  }
+}

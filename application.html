@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for student residence at Kwena Student Heights.">
+  <title>Residence Application | Kwena Student Heights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="application-page">
+  <header class="site-header site-header--solid">
+    <a class="brand" href="index.html">
+      <img src="Logo/ChatGPT%20Image%20Nov%2015,%202026,%2007_08_58%20PM.png" alt="">
+      <span>Kwena Student Heights</span>
+    </a>
+    <a class="header-link" href="mailto:kwenastudentheights@gmail.com">Contact</a>
+  </header>
+
+  <main class="application-main">
+    <div class="application-intro">
+      <a class="back-link" href="index.html">← Back to home</a>
+      <p class="eyebrow eyebrow--green">Residence application</p>
+      <h1>Apply for residence</h1>
+      <p>Your profile details will be included in an email draft for the Kwena Student Heights team.</p>
+    </div>
+
+    <p class="application-card" id="application-state" role="status" aria-live="polite">Checking your profile… If this message remains, check Firebase setup and reload.</p>
+    <div class="application-card" id="application-gate" hidden>
+      <h2 id="application-gate-heading">Sign in to apply</h2>
+      <p id="application-gate-copy">Sign in and complete your profile to continue.</p>
+      <a class="button button--primary" href="profile.html#sign-in-form">Sign in</a>
+      <p class="form-note">Don't have an account? <a href="profile.html#create-account">Create one</a></p>
+    </div>
+    <form class="application-card" id="application-form" hidden>
+      <section class="form-section" aria-labelledby="profile-summary-heading">
+        <h2 id="profile-summary-heading">Your profile</h2>
+        <dl class="profile-summary" id="profile-summary"></dl>
+      </section>
+      <label class="consent" for="email-consent">
+        <input id="email-consent" name="Email consent" type="checkbox" required>
+        <span>I agree to open an email draft containing my profile information, addressed to the Kwena Student Heights team. I understand I must review and send the email myself. *</span>
+      </label>
+      <button class="button button--primary" type="submit">Prepare application email</button>
+      <p class="form-note">Review the email draft and press Send to submit your application.</p>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <span>Kwena Student Heights</span>
+    <a href="mailto:kwenastudentheights@gmail.com">kwenastudentheights@gmail.com</a>
+  </footer>
+
+  <script type="module" src="application.js"></script>
+</body>
+</html>
